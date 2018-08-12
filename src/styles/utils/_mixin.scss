@@ -1,0 +1,3 @@
+@mixin header($number: 1) {
+  font-size: (5 - $number) * 1rem;
+}

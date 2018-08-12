@@ -1,4 +1,4 @@
-# gist-finder
+# pubg-finder
 
 ## Project setup
 ```

@@ -1,0 +1,10 @@
+.fade-enter-active, { /* .fade-leave-active */
+  transition: all 0.4s;
+}
+.fade-enter,  /* .fade-leave-to */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.fade-move {
+  transition: all 0.4s;
+}
