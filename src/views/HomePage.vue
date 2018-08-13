@@ -10,15 +10,15 @@
       </p>
     </BaseTransition>
     <BaseTransition type="fade" :active="transition >= 2" @after-enter="increaseTransition">
-      <BaseButton name="Get Started!" @click="$emit('change-route', 'find')" />
+      <BaseButton name="Get Started!" @click="$router.push('/find')" />
     </BaseTransition>
   </div>
 </template>
 
 <script>
-import BaseButton from '../components/BaseButton';
-import BaseInput from '../components/BaseInput';
-import BaseTransition from '../components/BaseTransition';
+import BaseButton from '@/components/BaseButton';
+import BaseInput from '@/components/BaseInput';
+import BaseTransition from '@/components/BaseTransition';
 
 export default {
   name: 'HomePage',

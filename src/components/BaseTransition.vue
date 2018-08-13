@@ -24,12 +24,12 @@ export default {
     active: {
       type: Boolean,
       default: true,
-    }
+    },
   },
   data() {
     return {
       mounted: false,
-    }
-  }
-}
+    };
+  },
+};
 </script>

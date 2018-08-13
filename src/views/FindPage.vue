@@ -18,9 +18,9 @@
 <script>
 import { mapActions, mapState, mapGetters } from 'vuex';
 
-import BaseInput from '../components/BaseInput';
-import BaseLoader from '../components/BaseLoader';
-import BaseTransition from '../components/BaseTransition';
+import BaseInput from '@/components/BaseInput';
+import BaseLoader from '@/components/BaseLoader';
+import BaseTransition from '@/components/BaseTransition';
 import PlayerList from './layouts/PlayerList';
 
 export default {

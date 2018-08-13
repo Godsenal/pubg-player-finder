@@ -22,8 +22,9 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/util.scss';
 .button {
+  min-width: 150px;
   border: 0;
-  border-radius: 5px;
+  border-radius: 20px;
   outline: none;
   padding: 10px;
 
