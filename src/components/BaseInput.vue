@@ -15,13 +15,13 @@ export default {
       type: String,
       required: true,
       default: '',
-    }
+    },
   },
   methods: {
-    handleInput: function(value) {
+    handleInput(value) {
       this.$emit('input', value);
     },
-  }
+  },
 };
 </script>
 

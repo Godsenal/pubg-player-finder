@@ -32,14 +32,14 @@ export default {
       transition: 0,
       value: '',
       finder: '',
-    }
+    };
   },
   methods: {
-    increaseTransition: function() {
+    increaseTransition() {
       this.transition = this.transition + 1;
     },
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>

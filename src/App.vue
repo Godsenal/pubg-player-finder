@@ -24,13 +24,13 @@ export default {
   data() {
     return {
       route: 'home',
-    }
+    };
   },
   methods: {
     changeRoute(path) {
       this.route = path;
     },
-  }
+  },
 };
 </script>
 

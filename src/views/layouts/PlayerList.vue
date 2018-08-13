@@ -15,14 +15,14 @@
 
 <script>
 export default {
-  name: "PlayerList",
+  name: 'PlayerList',
   props: {
     players: {
       type: Array,
-      default: [],
+      default: () => [],
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -37,5 +37,3 @@ export default {
   }
 }
 </style>
-
-

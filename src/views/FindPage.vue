@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       playerId: '',
-    }
+    };
   },
   computed: {
     ...mapState({
@@ -49,9 +49,9 @@ export default {
     handleEnter() {
       this.searchPlayer({ keyword: this.playerId });
       this.playerId = '';
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -59,7 +59,6 @@ export default {
 .input {
   width: 80%;
   padding: 10px;
-  
   text-align: center;
 }
 .result-container {

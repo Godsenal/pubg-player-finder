@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: "off" */
 import instance from './config';
 
 /* eslint import/prefer-default-export: "off" */
