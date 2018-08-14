@@ -1,16 +1,20 @@
 <template>
   <div>
     <BaseHeader>
-      <div class="navigation">
-        <router-link
-          class="navigation-item"
-          v-for="(route, index) in navigations"
-          :key="index"
-          :to="route.path"
-        >
-          {{ route.name }}
-        </router-link>
-      </div>
+      <router-link
+        to="/"
+        class="navigation-item">
+        <span class="logo">PUBG Finder</span>
+      </router-link>
+      <router-link
+        exact
+        class="navigation-item"
+        v-for="(route, index) in navigations"
+        :key="index"
+        :to="route.path"
+      >
+        {{ route.name }}
+      </router-link>
     </BaseHeader>
     <div id="app">
       <BaseTransition type="fade">
@@ -47,7 +51,8 @@ export default {
   },
   computed: {
     navigations() {
-      return routes.filter(route => route.path !== '/*');
+      const excludePath = ['/', '/*']; // Root and NotFound
+      return routes.filter(route => !excludePath.some(path => path === route.path));
     },
   },
 };
@@ -58,6 +63,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
+@import '@/styles/util.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -65,13 +71,25 @@ export default {
   text-align: center;
   margin-top: 60px;
 }
-.navigation {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
+.logo {
+  font-size: 1.5em;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding: 10px;
 }
 .navigation-item {
-  margin-left: 10px;
+  position: relative;
+  font-size: 1.2em;
+  margin-left: 20px;
+  color: $color-skyblue;
+  text-decoration: none;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+}
+.router-link-active {
+  opacity: 1;
 }
 </style>

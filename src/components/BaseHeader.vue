@@ -7,10 +7,12 @@
 <style lang="scss" scoped>
 @import '@/styles/util.scss';
 .header {
-  color: white;
-  background-color: $color-purple;
+  color: $color-skyblue;
 
+  width: 100%;
   height: 60px;
+  display: flex;
+  align-items: center;
 }
 </style>
 

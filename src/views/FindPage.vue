@@ -17,6 +17,7 @@
 
 <script>
 import { mapActions, mapState, mapGetters } from 'vuex';
+import throttle from 'lodash/throttle';
 
 import BaseInput from '@/components/BaseInput';
 import BaseLoader from '@/components/BaseLoader';
@@ -46,10 +47,11 @@ export default {
   },
   methods: {
     ...mapActions('player', ['searchPlayer']),
-    handleEnter() {
+    handleEnter: throttle(function throttled() {
+      console.log('throttled');
       this.searchPlayer({ keyword: this.playerId });
       this.playerId = '';
-    },
+    }, 2000),
   },
 };
 </script>

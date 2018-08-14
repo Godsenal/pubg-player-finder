@@ -5,8 +5,8 @@
     </BaseTransition>
     <BaseTransition type="fade" :active="transition >= 1" @after-enter="increaseTransition">
       <p class="paragraph">
-        First Vue Project.<br/>
-        some description...<br />
+        My First Vue Project.<br/>
+        vuex and vue-router<br />
       </p>
     </BaseTransition>
     <BaseTransition type="fade" :active="transition >= 2" @after-enter="increaseTransition">
@@ -45,7 +45,7 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/util.scss';
 .container {
-  margin-top: 20%;
+  margin-top: 10%;
 }
 .header {
   @include header(1);

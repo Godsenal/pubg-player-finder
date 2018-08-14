@@ -52,22 +52,21 @@ const mutations = {
 };
 
 const actions = {
-  searchPlayer({ commit }, { region = 'pc-krjp', keyword = '' }) {
+  async searchPlayer({ commit }, { region = 'pc-krjp', keyword = '' }) {
     commit('searchPlayer', { region, keyword });
-    getPlayers({ region, keyword })
-      .then((res) => {
-        commit('searchPlayerSuccess', { results: res.data });
-      })
-      .catch((err) => {
-        const { status } = err.response;
-        let message;
-        if (status === 404) {
-          message = '사용자를 찾을 수 없습니다.';
-        } else {
-          message = '에러가 발생하였습니다.';
-        }
-        commit('searchPlayerFailure', { message });
-      });
+    try {
+      const res = await getPlayers({ region, keyword });
+      commit('searchPlayerSuccess', { results: res.data });
+    } catch (err) {
+      const { status } = err.response;
+      let message;
+      if (status === 404) {
+        message = '사용자를 찾을 수 없습니다.';
+      } else {
+        message = '에러가 발생하였습니다.';
+      }
+      commit('searchPlayerFailure', { message });
+    }
   },
 };
 
